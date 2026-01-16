@@ -1,0 +1,18 @@
+# Node.js & NestJS & React
+node_modules/
+dist/
+build/
+coverage/
+.env
+
+# Go
+bin/
+*.exe
+*.test
+vendor/
+
+# IDE & System
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
