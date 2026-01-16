@@ -1,0 +1,33 @@
+services:
+  # 1. Головна база даних (PostgreSQL)
+  postgres:
+    image: postgres:16-alpine
+    container_name: simtrade_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: simtrade_main
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - simtrade-network
+
+  # 2. Швидка пам'ять / Черга повідомлень (Redis)
+  redis:
+    image: redis:7-alpine
+    container_name: simtrade_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - simtrade-network
+
+# Томи для збереження даних, щоб вони не зникали після перезапуску контейнера
+volumes:
+  postgres_data:
+
+# Мережа, щоб контейнери бачили один одного
+networks:
+  simtrade-network:
+    driver: bridge
