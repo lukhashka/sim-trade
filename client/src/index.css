@@ -1,0 +1,52 @@
+:root {
+  /* Палітра кольорів (Fintech Dark Mode) */
+  --bg-dark: #0f1115; /* Глибокий чорний фон */
+  --bg-card: #181b21; /* Трохи світліший для карток */
+  --primary: #3b82f6; /* Акцентний синій */
+  --primary-hover: #2563eb;
+  --text-main: #ffffff;
+  --text-muted: #9ca3af;
+  --border: #2d3748;
+  --error: #ef4444;
+  --success: #10b981;
+
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
